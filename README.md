@@ -76,6 +76,7 @@ sudo docker run --rm --gpus all nvidia/cuda:12.8.1-base-ubuntu24.04 nvidia-smi
 ```bash
 cd gpu
 docker build -t jaiio2025-gpu .
+cd ..
 ```
 
 La imagen tiene todas las dependencias de Python que están en `requirements.txt`, y levanta automáticamente el servidor de MLflow al ejecutar el container.
@@ -97,7 +98,6 @@ Esto iniciará el MLflow Tracking Server en el puerto 5000.
 1. Abrí VSCode, y asegurate de tener la extensión de Dev Containers.
 2. Presione ctrl+shift+P, y seleccione la opción `Dev Containers: Attach to running container...`
 3. Seleccione el container `jaiio2025`.
-4. Una vez dentro del container, seleccione el kernel /opt/env/bin/python (en caso de que vscode no lo haya detectado automáticamente).
 
 ## Cómo usar este repositorio sin GPU
 
@@ -136,6 +136,7 @@ docker run hello-world
 ```bash
 cd cpu
 docker build -t jaiio2025-cpu .
+cd ..
 ```
 
 La imagen tiene todas las dependencias de Python que están en `requirements.txt`, y levanta automáticamente el servidor de MLflow al ejecutar el container.
