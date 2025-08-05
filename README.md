@@ -1,5 +1,13 @@
 # Introducción al experiment tracking con MLflow – JAIIO 2025
 
+## Índice
+
+- [Descripción general](#descripción-general)
+- [Requisitos para usar con GPU](#cómo-usar-este-repositorio-con-gpu-nvidia)
+- [Requisitos para usar sin GPU](#cómo-usar-este-repositorio-sin-gpu)
+
+## Descripción general
+
 Este repositorio contiene el código y entorno utilizado en la charla **"Introducción al experiment tracking con MLflow"**, presentada en las **Jornadas Argentinas de Informática (JAIIO) 2025**.
 
 El objetivo es mostrar cómo aplicar MLflow para registrar experimentos, métricas, parámetros, artefactos y modelos durante el entrenamiento de una red neuronal simple en PyTorch, usando el dataset MNIST.
@@ -91,7 +99,7 @@ docker run  -p 5000:5000 --rm -it --gpus all \
     jaiio2025-gpu:latest
 ```
 
-Esto iniciará el MLflow Tracking Server en el puerto 5000.
+Esto iniciará MLflow Tracking Server en http://localhost:5000
 
 ### Usar desde VSCode con Dev Containers (recomendado)
 
@@ -144,7 +152,7 @@ La imagen tiene todas las dependencias de Python que están en `requirements.txt
 ### Ejecutar el contenedor
 
 ```bash
-docker run  -p 5000:5000 --rm -it --gpus all \
+docker run  -p 5000:5000 --rm -it \
     -v ./workspace:/root/workspace \
     -v ./mlflow:/root/mlflow \
     --name jaiio2025 \
